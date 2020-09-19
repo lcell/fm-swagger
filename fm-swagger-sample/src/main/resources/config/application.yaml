@@ -1,0 +1,48 @@
+server:
+  port: 20501
+swagger:
+  enabled: true
+  api-info:
+    terms-of-service-url: http://github.com/saleson
+    title: "all"
+    description: testdescription3333
+    version: last
+    contact:
+      name: testall
+      email: test@test.com
+  globalResponseMessage:
+    all:
+      - code: 0
+        message: 失败
+    get:
+      - code: 1
+        message: 成功
+  globalOperationParameters:
+    - name: accessToken
+      description: 访问令牌
+      parameterType: header
+      modelRef: string
+      required: false
+  docket:
+    all:
+      docketSelect:
+        basePackage: com.github.saleson.fm.swaager.sample.rest
+    v100:
+      api-info:
+        title: "v1.0.0"
+        description: testdescription
+        version: v1.0.0
+        contact:
+          name: testname100
+      docketSelect:
+        basePackage: com.github.saleson.fm.swaager.sample.rest.v100
+    v101:
+      api-info:
+        title: "v1.0.1"
+        description: testdescription
+        version: v1.0.1
+        contact:
+          name: testname101
+      docketSelect:
+        basePackage: com.github.saleson.fm.swaager.sample.rest.v101
+
